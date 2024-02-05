@@ -1,26 +1,10 @@
-﻿using System;
+﻿#nullable enable
+using System;
 
 namespace Lab1
 {
     public class Lab1
     {
-        static void task1_10()
-        {
-            Console.Write("Input V : ");
-            string? input = Console.ReadLine();
-            if (double.TryParse(input, out double v))
-            {
-                double sideLength = Math.Pow(v, 1.0 / 3.0);
-                Console.WriteLine(
-                    $"The edge length of a cube with volume {v} is equal to: {sideLength}"
-                );
-            }
-            else
-            {
-                Console.WriteLine("Incorrect value. Input correct value.");
-            }
-        }
-
         static void task2_10()
         {
             Console.Write("2-digit number = ");
@@ -74,19 +58,33 @@ namespace Lab1
         {
             Console.Write("Enter the number of days (n > 0): ");
             string? input = Console.ReadLine();
-            if (int.TryParse(input, out int n))
+            if (int.TryParse(input, out int n) && n > 0)
             {
-                DateTime currentData = DateTime.Now;
-                DateTime searchData = currentData.AddDays(-n);
-
-                Console.WriteLine(
-                    $"Result : {searchData.Day}.{searchData.Month}.{searchData.Year}"
-                );
+                if (n > 0)
+                {
+                    DateTime currentData = DateTime.Now;
+                    DateTime searchData = currentData.AddDays(-n);
+                    Console.WriteLine(
+                        "Result : "
+                            + searchData.Day
+                            + "."
+                            + searchData.Month
+                            + "."
+                            + searchData.Year
+                    );
+                }
             }
             else
             {
                 Console.WriteLine("Please enter a valid number of days (n > 0).");
             }
+        }
+
+        static int SquareOfSum(int a, int b)
+        {
+            int sum = a + b;
+            int square = sum * sum;
+            return square;
         }
 
         static void task5_10()
@@ -99,8 +97,8 @@ namespace Lab1
                 input = Console.ReadLine();
                 if (int.TryParse(input, out int b))
                 {
-                    int result = (a + b) * (a + b);
-                    Console.WriteLine($"Result : {result}");
+                    int result = SquareOfSum(a, b);
+                    Console.WriteLine("Result : " + result);
                 }
                 else
                 {
@@ -124,7 +122,7 @@ namespace Lab1
                 if (double.TryParse(input, out double b))
                 {
                     double result = 5 + (b / ((b * b) + 1)) + (a - b) / (a + b);
-                    Console.WriteLine($"Result : {result}");
+                    Console.WriteLine("Result : " + result);
                 }
                 else
                 {
@@ -143,13 +141,12 @@ namespace Lab1
             {
                 Console.WriteLine("=========================================================");
                 Console.WriteLine("Select a task:");
-                Console.WriteLine("1. Task 1");
-                Console.WriteLine("2. Task 2");
-                Console.WriteLine("3. Task 3");
-                Console.WriteLine("4. Task 4");
-                Console.WriteLine("5. Task 5");
-                Console.WriteLine("6. Task 6");
-                Console.WriteLine("7. Exit");
+                Console.WriteLine("1. Task 2");
+                Console.WriteLine("2. Task 3");
+                Console.WriteLine("3. Task 4");
+                Console.WriteLine("4. Task 5");
+                Console.WriteLine("5. Task 6");
+                Console.WriteLine("6. Exit");
                 Console.WriteLine("=========================================================");
                 Console.Write("Enter your choice >>> ");
                 string? choice = Console.ReadLine();
@@ -157,30 +154,26 @@ namespace Lab1
                 switch (choice)
                 {
                     case "1":
-                        task1_10();
-                        break;
-
-                    case "2":
                         task2_10();
                         break;
 
-                    case "3":
+                    case "2":
                         task3_10();
                         break;
 
-                    case "4":
+                    case "3":
                         task4_10();
                         break;
 
-                    case "5":
+                    case "4":
                         task5_10();
                         break;
 
-                    case "6":
+                    case "5":
                         task6_10();
                         break;
 
-                    case "7":
+                    case "6":
                         return;
 
                     default:
@@ -191,3 +184,4 @@ namespace Lab1
         }
     }
 }
+#nullable disable
