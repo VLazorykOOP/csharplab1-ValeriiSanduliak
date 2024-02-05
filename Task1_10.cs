@@ -1,8 +1,21 @@
-﻿using System;
+﻿#nullable enable
+using System;
 
-public class Class1
+static void task1_10()
 {
-	public Class1()
-	{
-	}
+    Console.Write("Input V : ");
+    string? input = Console.ReadLine();
+    if (double.TryParse(input, out double v))
+    {
+        double sideLength = Math.Pow(v, 1.0 / 3.0);
+        Console.WriteLine(
+            "The edge length of a cube with volume " + v + " is equal to: " + sideLength
+        );
+    }
+    else
+    {
+        Console.WriteLine("Incorrect value. Input correct value.");
+    }
 }
+Console.WriteLine("Task1_10: ");
+task1_10();
