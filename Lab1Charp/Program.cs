@@ -60,19 +60,11 @@ namespace Lab1
             string? input = Console.ReadLine();
             if (int.TryParse(input, out int n) && n > 0)
             {
-                if (n > 0)
-                {
-                    DateTime currentData = DateTime.Now;
-                    DateTime searchData = currentData.AddDays(-n);
-                    Console.WriteLine(
-                        "Result : "
-                            + searchData.Day
-                            + "."
-                            + searchData.Month
-                            + "."
-                            + searchData.Year
-                    );
-                }
+                DateTime currentData = DateTime.Now;
+                DateTime searchData = currentData.AddDays(-n);
+                Console.WriteLine(
+                    "Result : " + searchData.Day + "." + searchData.Month + "." + searchData.Year
+                );
             }
             else
             {

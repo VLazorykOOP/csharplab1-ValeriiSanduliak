@@ -7,8 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab1Charp", "Lab1Charp\Lab1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{89746A03-78E8-4043-81F2-D1EEAF4A7373}"
 	ProjectSection(SolutionItems) = preProject
-		Lab1Charp\Task1_10.cs = Lab1Charp\Task1_10.cs
-		Lab1Charp\Task1_10.exe = Lab1Charp\Task1_10.exe
+		Task1_10.cs = Task1_10.cs
 	EndProjectSection
 EndProject
 Global
